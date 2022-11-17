@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreBelleza.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <StackLayout Background="#011526">
+        <Frame BackgroundColor="#023059"
+               Padding="24"
+               CornerRadius="0">
+            <StackLayout Orientation="Horizontal"
+                         HeightRequest="40">
+                <Image Source="productos__cosmeticos.png"
+                       WidthRequest="70" />
+                <Label Text="Welcome to Store Belleza"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"
+                       FontSize="26" />
+            </StackLayout>
+        </Frame>
+        <Image Source="productos_cosmeticos.png"
+               Margin="20,0"
+               WidthRequest="200" />
+        <Button Text="Agregar producto"
+                BackgroundColor="#035AA6"
+                TextTransform="None"
+                Margin="5"
+                TextColor="#fff"
+                CornerRadius="30"
+                x:Name="btnAdd"
+                Clicked="btnAdd_Clicked"
+                />
+        <Button Text="Listar producto"
+                BackgroundColor="#035AA6"
+                TextTransform="None"
+                TextColor="#fff"
+                Margin="5"
+                CornerRadius="30"
+                x:Name="btnListProducts"
+                />
+    </StackLayout>
+</ContentPage>

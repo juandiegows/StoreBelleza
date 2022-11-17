@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreBelleza.View.addProducts"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#011526">
+            <Frame BackgroundColor="#023059"
+                   Padding="24"
+                   CornerRadius="0">
+                <StackLayout Orientation="Horizontal"
+                             HeightRequest="40">
+                    <Image Source="productos__cosmeticos.png"
+                           WidthRequest="70" />
+                    <Label Text="add products"
+                           HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           FontSize="26" />
+                </StackLayout>
+            </Frame>
+            <Label  Text="add product"
+                    FontSize="24"
+                    Margin="0,20,0,0"
+                    TextColor="#91BBF2"
+                    HorizontalOptions="CenterAndExpand" />
+            <Frame  Padding="5"
+                    Margin="20"
+                    CornerRadius="20">
+                <Entry Placeholder="Name product"  Margin="20,0,20,0" />
+            </Frame>
+            <Label Text="Description product"  TextColor="#fff" Margin="20,0,0,0" FontSize="18"/>
+            <Frame  Padding="5"
+                    Margin="20,5,20,20"
+                    CornerRadius="10">
+                <Editor Keyboard="Plain"
+                        AutoSize="TextChanges"
+                        MaxLength="180"  />
+            </Frame>
+            <Frame  Padding="5"
+                    Margin="20"
+                    CornerRadius="20">
+                <Entry Placeholder="Price product"
+                       Keyboard="Numeric"
+                       
+                       Margin="20,0,20,0" />
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Add"
+                        TextTransform="None"
+                        BackgroundColor="#91BBF2"
+                        CornerRadius="50"
+                        WidthRequest="150" />
+                <Button Text="Cancel or go back"
+                        TextTransform="None"
+                        BorderColor="red"
+                        BorderWidth="2"
+                        BackgroundColor="Transparent"
+                        Opacity=".8"
+                        TextColor="red"
+                        CornerRadius="50"
+                        WidthRequest="180" />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
