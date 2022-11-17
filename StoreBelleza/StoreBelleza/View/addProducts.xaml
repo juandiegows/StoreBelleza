@@ -26,7 +26,7 @@
             <Frame  Padding="5"
                     Margin="20"
                     CornerRadius="20">
-                <Entry Placeholder="Name product"  Margin="20,0,20,0" />
+                <Entry Placeholder="Name product" x:Name="txtName"  Margin="20,0,20,0" />
             </Frame>
             <Label Text="Description product"  TextColor="#fff" Margin="20,0,0,0" FontSize="18"/>
             <Frame  Padding="5"
@@ -34,14 +34,24 @@
                     CornerRadius="10">
                 <Editor Keyboard="Plain"
                         AutoSize="TextChanges"
-                        MaxLength="180"  />
+                        MaxLength="180"
+                        x:Name="txtDescription" />
             </Frame>
             <Frame  Padding="5"
                     Margin="20"
                     CornerRadius="20">
                 <Entry Placeholder="Price product"
                        Keyboard="Numeric"
-                       
+                       x:Name="txtPrice"
+                       Margin="20,0,20,0" />
+            </Frame>
+            <Frame  Padding="5"
+                    Margin="20"
+                    CornerRadius="20">
+                <Entry Placeholder="Count product"
+                       Keyboard="Numeric"
+                       x:Name="txtCount"
+                       x:DataType="x:Int64"
                        Margin="20,0,20,0" />
             </Frame>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -49,7 +59,10 @@
                         TextTransform="None"
                         BackgroundColor="#91BBF2"
                         CornerRadius="50"
-                        WidthRequest="150" />
+                        WidthRequest="150"
+                        x:Name="btnAdd"
+                        Clicked="btnAdd_Clicked"
+                        />
                 <Button Text="Cancel or go back"
                         TextTransform="None"
                         BorderColor="red"
@@ -58,7 +71,10 @@
                         Opacity=".8"
                         TextColor="red"
                         CornerRadius="50"
-                        WidthRequest="180" />
+                        WidthRequest="180"
+                        x:Name="btnCancel"
+                        
+                        />
             </StackLayout>
             
         </StackLayout>

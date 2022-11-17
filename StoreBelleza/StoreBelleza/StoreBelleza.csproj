@@ -17,11 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Controller\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="View\addProducts.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
