@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StoreBelleza.Data
 {
-    public class SQLiteHelper :SQLiteAsyncConnection
+    public class SQLiteHelper :SQLiteConnection
     {
         SQLiteAsyncConnection db;
         public SQLiteHelper(string dbPath):base(dbPath)

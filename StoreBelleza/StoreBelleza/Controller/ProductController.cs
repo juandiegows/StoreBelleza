@@ -16,29 +16,36 @@ namespace StoreBelleza.Controller
             SQLite = db;
         }
 
-        public Task<int> Delete(Product model)
+        public int Delete(Product model)
         {
-           return SQLite.DeleteAsync(model);
+           return SQLite.Delete(model);
         }
 
-        public Task<List<Product>> Get()
+        public List<Product> Get()
         {
-            return SQLite.Table<Product>().ToListAsync();
+            return SQLite.Table<Product>().ToList();
         }
 
-        public async Task<Product> Get(int ID)
+        public  Product Get(int ID)
         {
-            return (await Get()).FirstOrDefault(x => x.Id == ID);
+            return ( Get()).FirstOrDefault(x => x.Id == ID);
         }
 
-        public Task<int> Insert(Product model)
+        public int Insert(Product model)
         {
-            return SQLite.InsertAsync(model);
+            return SQLite.Insert(model);
         }
 
-        public Task<int> Update(Product model)
+        public int nInsert(Product model)
         {
-           return SQLite.UpdateAsync(model);
+            throw new NotImplementedException();
         }
+
+        public int Update(Product model)
+        {
+           return SQLite.Update(model);
+        }
+
+      
     }
 }

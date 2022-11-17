@@ -17,9 +17,10 @@ namespace StoreBelleza.ViewModels
         {
             Get(db);
         }
-        public async void Get(SQLiteHelper db)
+
+        public  void Get(SQLiteHelper db)
         {
-            collectionProduct = new ObservableCollection<Product>( await new ProductController(db).Get());
+            collectionProduct = new ObservableCollection<Product>(  new ProductController(db).Get());
         }
     }
 }

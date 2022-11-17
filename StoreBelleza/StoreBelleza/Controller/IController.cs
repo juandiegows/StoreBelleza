@@ -7,10 +7,10 @@ namespace StoreBelleza.Controller
 {
     public interface IController<T>
     {
-        Task<int> Insert(T model);
-        Task<List<T>> Get();
-        Task<T> Get(int ID);
-        Task<int> Update(T model);
-        Task<int> Delete(T model);
+        int nInsert(T model);
+        List<T> Get();
+        T Get(int ID);
+        int Update(T model);
+        int Delete(T model);
     }
 }

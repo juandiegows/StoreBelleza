@@ -37,7 +37,7 @@ namespace StoreBelleza.View
                 {
                     double.TryParse(txtCount.Text, out double price);
                     int.TryParse(txtCount.Text, out int count);
-                    int result = await new ProductController(App.SQLiteHelper).Insert(new Model.Product
+                    int result =  new ProductController(App.SQLiteHelper).Insert(new Model.Product
                     {
                         Name = txtName.Text,
                         Description = txtDescription.Text,
