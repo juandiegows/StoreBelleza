@@ -21,5 +21,10 @@ namespace StoreBelleza
         {
             Navigation.PushAsync(new addProducts());
         }
+
+        private void btnListProducts_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new listProduct());
+        }
     }
 }

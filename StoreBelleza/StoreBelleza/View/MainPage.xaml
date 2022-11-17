@@ -37,6 +37,7 @@
                 Margin="5"
                 CornerRadius="30"
                 x:Name="btnListProducts"
+                Clicked="btnListProducts_Clicked"
                 />
     </StackLayout>
 </ContentPage>

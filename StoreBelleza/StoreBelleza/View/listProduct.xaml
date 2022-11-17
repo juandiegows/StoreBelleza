@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StoreBelleza.View.listProduct"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Background="#011526">
+            <Frame BackgroundColor="#023059"
+                   Padding="24"
+                   CornerRadius="0">
+                <StackLayout Orientation="Horizontal"
+                             HeightRequest="40">
+                    <Image Source="productos__cosmeticos.png"
+                           WidthRequest="70" />
+                    <Label Text="list product"
+                           HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           FontSize="26" />
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="FillAndExpand">
+                        <Image Source="cart.png"
+                               WidthRequest="70" />
+                        <Label Text="(0)"
+                               Margin="-20,10,0,0"
+                               HorizontalTextAlignment="Center"
+                               TextColor="White" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal"
+                         Padding="20,10,10,0"
+                         HorizontalOptions="FillAndExpand">
+                <Label Text="Total a pagar :   $ "
+                       TextColor="#fff"
+                       FontSize="20" />
+                <Label Margin="10,0,0,0"
+                       Text="0"
+                       TextColor="#fff"
+                       FontSize="20" />
+                <Button Text="buy"
+                        WidthRequest="200"
+                        HorizontalOptions="EndAndExpand"
+                        TextColor="#fff"
+
+                        CornerRadius="10"
+                       BackgroundColor="#035AA6"
+                        FontSize="14"></Button>
+            </StackLayout>
+            <CollectionView ItemsSource="{Binding collectionProduct}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame BackgroundColor="#023059"
+                                   Margin="10"
+                                   CornerRadius="20">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}"
+                                           FontAttributes="Bold"
+                                           FontSize="20"
+                                           TextColor="#fff"></Label>
+                                    <Label  TextColor="#fff"
+                                            Text="{Binding Description}"></Label>
+                                    <StackLayout Orientation="Horizontal"
+                                                 Spacing="20">
+                                        <Label   TextColor="#fff"
+                                                 Text="{Binding Price, StringFormat='Price $ {0}'}"></Label>
+                                        <Label  TextColor="#fff"
+                                                Text="{Binding Count, StringFormat='Count : {0}'}"></Label>
+                                        <Frame Margin="0,0,-15,0"  BackgroundColor="#035AA6"
+                                                Padding="15,1,15,1"
+                                                CornerRadius="30"
+                                               HeightRequest="50"
+                                                HorizontalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="cart.png"
+                                                       WidthRequest="40" />
+                                                <Button   TextColor="#fff"
+                                                          Text="Add to cart"
+                                                          BackgroundColor="Transparent"
+                                                          FontSize="14"></Button>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
