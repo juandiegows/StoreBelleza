@@ -27,7 +27,7 @@
                        TextColor="#fff"
                        FontSize="18" />
                 <Label Margin="10,0,0,0"
-                       Text="{Binding Price}"
+                       Text="{Binding collectionProduct.Count}"
                        TextColor="#fff"
                        FontSize="18" />
             </StackLayout>
@@ -53,26 +53,49 @@
                                         <Label  TextColor="#fff"
                                                 Text="{Binding Count, StringFormat='Count : {0}'}"></Label>
                                     </StackLayout>
-                                    <Frame Margin="0,10,0,0"
-                                           BackgroundColor="#035AA6"
-                                           Padding="15,1,15,1"
-                                           CornerRadius="30"
-                                           HeightRequest="50"
-                                           HorizontalOptions="CenterAndExpand">
-                                        <StackLayout Orientation="Horizontal">
-                                            <StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
-                                            </StackLayout.GestureRecognizers>
-                                            <Image Source="cart.png"
-                                                   WidthRequest="40" />
-                                            <Button   TextColor="#fff"
-                                                      Text="Add to cart"
-                                                      x:Uid="{Binding Id}"
-                                                      x:Name="{Binding Name}"
-                                                      BackgroundColor="Transparent"
-                                                      FontSize="14"></Button>
-                                        </StackLayout>
-                                    </Frame>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame Margin="0,10,0,0"
+                                               BackgroundColor="#035AA6"
+                                               Padding="15,1,15,1"
+                                               CornerRadius="30"
+                                               HeightRequest="50"
+                                               HorizontalOptions="CenterAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
+                                                </StackLayout.GestureRecognizers>
+                                                <Image Source="abastecimiento.png"
+                                                       WidthRequest="40" />
+                                                <Button   TextColor="#fff"
+                                                          Text="supply"
+                                                          x:Uid="{Binding Id}"
+                                                          x:Name="{Binding Name}"
+                                                          BackgroundColor="Transparent"
+                                                          FontSize="14"></Button>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Frame Margin="0,10,0,0"
+                                               BackgroundColor="#035AA6"
+                                               Padding="15,1,15,1"
+                                               CornerRadius="30"
+                                               HeightRequest="50"
+                                               HorizontalOptions="CenterAndExpand">
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
+                                                </StackLayout.GestureRecognizers>
+                                                <Image Source="eliminar.png"
+                                                       WidthRequest="40" />
+                                                <Button   TextColor="#fff"
+                                                          Text="Delete"
+                                                          x:Uid="{Binding Id}"
+                                                          x:Name="{Binding Name}"
+                                                          BackgroundColor="Transparent"
+                                                          FontSize="14"></Button>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                  
                                 </StackLayout>
                             </Frame>
                         </Grid>

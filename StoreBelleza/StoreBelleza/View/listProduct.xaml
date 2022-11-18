@@ -75,9 +75,9 @@
                                            CornerRadius="30"
                                            HeightRequest="50"
                                            HorizontalOptions="CenterAndExpand">
-                                        <StackLayout Orientation="Horizontal">
+                                        <StackLayout Orientation="Horizontal" x:Name="stBtn">
                                             <StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                             </StackLayout.GestureRecognizers>
                                             <Image Source="cart.png"
                                                    WidthRequest="40" />

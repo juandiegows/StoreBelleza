@@ -61,16 +61,21 @@ namespace StoreBelleza.View
 
         private async void btnAddCart_Clicked(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            var product = button.BindingContext as Product;
-            string countString = await DisplayPromptAsync("Question 1", "how many products do you want ("+ product.Name+ ")?", keyboard: Keyboard.Numeric);
+            await AddCart(sender);
+
+        }
+
+        private async Task AddCart(object sender)
+        {
+            var product = (sender as Xamarin.Forms.View).BindingContext as Product;
+            string countString = await DisplayPromptAsync("Question 1", "how many products do you want (" + product.Name + ")?", keyboard: Keyboard.Numeric);
             int.TryParse(countString, out int count);
-            if(count == 0)
+            if (count == 0)
             {
                 return;
             }
-        
-            if(model.Add(product, count))
+
+            if (model.Add(product, count))
             {
                 BindingContext = null;
                 BindingContext = model;
@@ -78,9 +83,14 @@ namespace StoreBelleza.View
             }
             else
             {
-                await DisplayAlert("error", "Can't add to cart,check that the quantity does not exceed the limit in inventory (" + product.Name+")", "Ok");
+                await DisplayAlert("error", "Can't add to cart,check that the quantity does not exceed the limit in inventory (" + product.Name + ")", "Ok");
             }
-          
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await AddCart(sender);
+
         }
     }
 }
