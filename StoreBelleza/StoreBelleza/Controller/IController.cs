@@ -7,7 +7,7 @@ namespace StoreBelleza.Controller
 {
     public interface IController<T>
     {
-        int nInsert(T model);
+        int Insert(T model);
         List<T> Get();
         T Get(int ID);
         int Update(T model);

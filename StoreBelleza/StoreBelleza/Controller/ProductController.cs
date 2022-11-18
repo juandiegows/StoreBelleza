@@ -36,10 +36,7 @@ namespace StoreBelleza.Controller
             return SQLite.Insert(model);
         }
 
-        public int nInsert(Product model)
-        {
-            throw new NotImplementedException();
-        }
+   
 
         public int Update(Product model)
         {

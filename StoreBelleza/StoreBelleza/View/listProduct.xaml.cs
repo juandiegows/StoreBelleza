@@ -5,6 +5,7 @@ using StoreBelleza.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -30,10 +31,30 @@ namespace StoreBelleza.View
 
         private async void btnBuy_Clicked(object sender, EventArgs e)
         {
+            if (model.Count == 0)
+            {
+                await DisplayAlert("error", "first add products to shopping cart", "Ok");
+                return;
+            }
             if ((await DisplayAlert("Question", "are you sure, you want to buy?", "yes", "no")))
             {
                 string NIC = await DisplayPromptAsync("Question 1", "What's your NIC?", keyboard: Keyboard.Numeric);
+                if (NIC ==  null)
+                {
+                    await DisplayAlert("error", "the NIC field is required", "Ok");
+                    return;
+                }
                 string direction = await DisplayPromptAsync("Question 2", "What's your Direction home?");
+                if (direction == null)
+                {
+                    await DisplayAlert("error", "the direction field is required", "Ok");
+                    return;
+                }
+                ProductController productController = new ProductController(App.SQLiteHelper);
+                foreach (var prod in model.collectionProduct.Where(x=> model.productsCard.Count(d=> d.Id == x.Id)> 0))
+                {
+                    productController.Update(prod);
+                }
                 await DisplayAlert("Success", "has been saved successfully", "Ok");
             }
         }

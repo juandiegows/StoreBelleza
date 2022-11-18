@@ -26,5 +26,10 @@ namespace StoreBelleza
         {
             Navigation.PushAsync(new listProduct());
         }
+
+        private void btnAdministrar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ManageProduct());
+        }
     }
 }

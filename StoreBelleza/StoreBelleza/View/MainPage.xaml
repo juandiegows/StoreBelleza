@@ -36,7 +36,9 @@
                     Margin="5"
                     TextColor="#fff"
                     CornerRadius="30"
-                    x:Name="btnAdministrar"/>
+                    x:Name="btnAdministrar"
+                   Clicked="btnAdministrar_Clicked"
+                    />
             <Button Text="Buy products"
                     BackgroundColor="#035AA6"
                     TextTransform="None"
