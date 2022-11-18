@@ -62,14 +62,15 @@
                                                HorizontalOptions="CenterAndExpand">
                                             <StackLayout Orientation="Horizontal">
                                                 <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
+                                                    <TapGestureRecognizer Tapped="btnSupply_Clicked" />
                                                 </StackLayout.GestureRecognizers>
                                                 <Image Source="abastecimiento.png"
                                                        WidthRequest="40" />
                                                 <Button   TextColor="#fff"
                                                           Text="supply"
                                                           x:Uid="{Binding Id}"
-                                                          x:Name="{Binding Name}"
+                                                          x:Name="btnSupply"
+                                                          Clicked="btnSupply_Clicked"
                                                           BackgroundColor="Transparent"
                                                           FontSize="14"></Button>
                                             </StackLayout>
@@ -82,14 +83,15 @@
                                                HorizontalOptions="CenterAndExpand">
                                             <StackLayout Orientation="Horizontal">
                                                 <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
+                                                    <TapGestureRecognizer Tapped="btnDelete_Clicked" />
                                                 </StackLayout.GestureRecognizers>
                                                 <Image Source="eliminar.png"
                                                        WidthRequest="40" />
                                                 <Button   TextColor="#fff"
                                                           Text="Delete"
                                                           x:Uid="{Binding Id}"
-                                                          x:Name="{Binding Name}"
+                                                          x:Name="btnDelete"
+                                                          Clicked="btnDelete_Clicked"
                                                           BackgroundColor="Transparent"
                                                           FontSize="14"></Button>
                                             </StackLayout>
