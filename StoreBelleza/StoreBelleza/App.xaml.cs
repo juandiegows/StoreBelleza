@@ -14,7 +14,7 @@ namespace StoreBelleza
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+          
 
         }
 
@@ -31,6 +31,7 @@ namespace StoreBelleza
         }
         protected override void OnStart()
         {
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnSleep()

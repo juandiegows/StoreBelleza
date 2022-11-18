@@ -12,7 +12,7 @@
                              HeightRequest="40">
                     <Image Source="productos__cosmeticos.png"
                            WidthRequest="70" />
-                    <Label Text="list product"
+                    <Label Text="buy product"
                            HorizontalTextAlignment="Center"
                            TextColor="White"
                            FontSize="26" />
@@ -21,7 +21,7 @@
                                  VerticalOptions="FillAndExpand">
                         <Image Source="cart.png"
                                WidthRequest="70" />
-                        <Label Text="(0)"
+                        <Label Text="{Binding Count, StringFormat='({0})'}"
                                Margin="-20,10,0,0"
                                HorizontalTextAlignment="Center"
                                TextColor="White" />
@@ -33,26 +33,27 @@
                          HorizontalOptions="FillAndExpand">
                 <Label Text="Total a pagar :   $ "
                        TextColor="#fff"
-                       FontSize="20" />
+                       FontSize="18" />
                 <Label Margin="10,0,0,0"
-                       Text="0"
+                       Text="{Binding Price}"
                        TextColor="#fff"
-                       FontSize="20" />
+                       FontSize="18" />
                 <Button Text="buy"
-                        WidthRequest="200"
                         HorizontalOptions="EndAndExpand"
                         TextColor="#fff"
-
+                        x:Name="btnBuy"
+                        Clicked="btnBuy_Clicked"
                         CornerRadius="10"
-                       BackgroundColor="#035AA6"
+                        BackgroundColor="#035AA6"
                         FontSize="14"></Button>
             </StackLayout>
-            <CollectionView ItemsSource="{Binding collectionProduct}">
+            <CollectionView ItemsSource="{Binding collectionProduct}"
+                            x:Name="This">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Frame BackgroundColor="#023059"
-                                   Margin="10"
+                                   Margin="15"
                                    CornerRadius="20">
                                 <StackLayout>
                                     <Label Text="{Binding Name}"
@@ -64,24 +65,31 @@
                                     <StackLayout Orientation="Horizontal"
                                                  Spacing="20">
                                         <Label   TextColor="#fff"
-                                                 Text="{Binding Price, StringFormat='Price $ {0}'}"></Label>
+                                                 Text="{Binding Price, StringFormat='Price : $ {0}'}"></Label>
                                         <Label  TextColor="#fff"
                                                 Text="{Binding Count, StringFormat='Count : {0}'}"></Label>
-                                        <Frame Margin="0,0,-15,0"  BackgroundColor="#035AA6"
-                                                Padding="15,1,15,1"
-                                                CornerRadius="30"
-                                               HeightRequest="50"
-                                                HorizontalOptions="EndAndExpand">
-                                            <StackLayout Orientation="Horizontal">
-                                                <Image Source="cart.png"
-                                                       WidthRequest="40" />
-                                                <Button   TextColor="#fff"
-                                                          Text="Add to cart"
-                                                          BackgroundColor="Transparent"
-                                                          FontSize="14"></Button>
-                                            </StackLayout>
-                                        </Frame>
                                     </StackLayout>
+                                    <Frame Margin="0,10,0,0"
+                                           BackgroundColor="#035AA6"
+                                           Padding="15,1,15,1"
+                                           CornerRadius="30"
+                                           HeightRequest="50"
+                                           HorizontalOptions="CenterAndExpand">
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding addCart,Source={x:Reference This}}" />
+                                            </StackLayout.GestureRecognizers>
+                                            <Image Source="cart.png"
+                                                   WidthRequest="40" />
+                                            <Button   TextColor="#fff"
+                                                      Text="Add to cart"
+                                                      x:Uid="{Binding Id}"
+                                                      x:Name="{Binding Name}"
+                                                      Clicked="btnAddCart_Clicked"
+                                                      BackgroundColor="Transparent"
+                                                      FontSize="14"></Button>
+                                        </StackLayout>
+                                    </Frame>
                                 </StackLayout>
                             </Frame>
                         </Grid>
@@ -89,5 +97,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

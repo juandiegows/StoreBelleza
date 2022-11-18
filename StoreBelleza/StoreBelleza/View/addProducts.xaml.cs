@@ -35,7 +35,7 @@ namespace StoreBelleza.View
             {
                 if ((await DisplayAlert("Question", "are you sure, you want to save?", "yes", "no")))
                 {
-                    double.TryParse(txtCount.Text, out double price);
+                    double.TryParse(txtPrice.Text, out double price);
                     int.TryParse(txtCount.Text, out int count);
                     int result =  new ProductController(App.SQLiteHelper).Insert(new Model.Product
                     {
